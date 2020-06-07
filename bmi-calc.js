@@ -17,11 +17,10 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.question("Enter your weight: ", (weight) => {
-	console.log("Your weight is: " + weight + " kg.");
-});
-
-rl.question("Enter your height: ", (height) => {
-	console.log("Your height is: " + height + " m.");
-	rl.close();
+rl.question("Enter your weight in kilograms: ", (weight) => {
+	rl.question("Enter your height in meters: ", (height) => {
+		console.log("Your weight is: " + weight + " kg.");
+		console.log("Your height is: " + height + " m.");
+		rl.close();
+	});
 });
