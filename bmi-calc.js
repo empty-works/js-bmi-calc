@@ -6,9 +6,17 @@ bmi should equal 20 when it's rounded to the nearest whole number.
 
 */
 
+var weight;
+var height;
+var bmi;
+
 const readline = require('readline');
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
+});
+
+rl.question("Enter your weight: ", (weight) => {
+	console.log("Your weight is: " + weight + " kg.");
 });
