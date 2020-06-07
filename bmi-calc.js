@@ -6,27 +6,23 @@ bmi should equal 20 when it's rounded to the nearest whole number.
 
 */
 
-function main() {
-	var weight;
-	var height;
-	var bmi;
+const readline = require('readline');
 
-	const readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
-	const rl = readline.createInterface({
-	  input: process.stdin,
-	  output: process.stdout
+rl.question("Enter your weight in kilograms: ", (weightin) => {
+	rl.question("Enter your height in meters: ", (heightin) => {
+		console.log("Your weight is: " + weightin + " kg.");
+		console.log("Your height is: " + heightin + " m.");
+		var bmi = getBMI(weightin, heightin).toFixed(1);
+		console.log("Your BMI is: " + bmi);
+		rl.close();
 	});
+});
 
-	rl.question("Enter your weight in kilograms: ", (weight) => {
-		rl.question("Enter your height in meters: ", (height) => {
-			console.log("Your weight is: " + weight + " kg.");
-			console.log("Your height is: " + height + " m.");
-			rl.close();
-		});
-	});
-};
-
-
-
-
+function getBMI(weight, height) {
+	return weight/Math.pow(height, 2);
+}
