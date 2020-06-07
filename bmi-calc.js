@@ -20,3 +20,8 @@ const rl = readline.createInterface({
 rl.question("Enter your weight: ", (weight) => {
 	console.log("Your weight is: " + weight + " kg.");
 });
+
+rl.question("Enter your height: ", (height) => {
+	console.log("Your height is: " + height + " m.");
+	rl.close();
+});
